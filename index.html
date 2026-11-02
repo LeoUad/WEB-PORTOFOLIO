@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leo Adi Saputra | Informatics Student & Aspiring Data Scientist</title>
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Website portofolio profesional Leo Adi Saputra, mahasiswa Program Studi Informatika di Universitas Ahmad Dahlan dengan fokus pada Data Science, Machine Learning, dan Data Visualization.">
+  <meta name="keywords" content="Leo Adi Saputra, Data Scientist, Informatika, Universitas Ahmad Dahlan, Machine Learning, Portfolio, Web Development, UAD">
+  <meta name="author" content="Leo Adi Saputra">
+  <meta property="og:title" content="Leo Adi Saputra | Portfolio & Data Science Showcase">
+  <meta property="og:description" content="Portfolio pribadi dan proyek akademik Leo Adi Saputra - Mahasiswa Informatika Universitas Ahmad Dahlan.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/avatar.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Dynamic Interactive Particle Canvas -->
+  <canvas id="networkCanvas"></canvas>
+
+  <!-- Navigation Backdrop for Mobile -->
+  <div id="navBackdrop" class="nav-backdrop" aria-hidden="true"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside id="mobileNav" class="mobile-nav" aria-label="Mobile Navigation">
+    <div>
+      <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;">
+        <div class="logo-badge">LAS</div>
+        <div class="logo-text">
+          <span class="name">Leo Adi Saputra</span>
+          <span class="tag">Informatics UAD</span>
+        </div>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#home" class="mobile-nav-link">Home</a></li>
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#skills" class="mobile-nav-link">Skills</a></li>
+        <li><a href="#projects" class="mobile-nav-link">Projects</a></li>
+        <li><a href="#experience" class="mobile-nav-link">Experience</a></li>
+        <li><a href="#achievements" class="mobile-nav-link">Achievements</a></li>
+        <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div class="mobile-nav-actions">
+      <button class="btn btn-outline btn-sm open-cv-modal-btn" style="width: 100%;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Download CV</span>
+      </button>
+      <a href="#contact" class="btn btn-primary btn-sm" style="width: 100%;">
+        <span>Let's Connect</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Sticky Navbar -->
+  <header id="navbar" class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="nav-logo" aria-label="Beranda Leo Adi Saputra">
+        <div class="logo-badge">LAS</div>
+        <div class="logo-text">
+          <span class="name">Leo Adi Saputra</span>
+          <span class="tag">Aspiring Data Scientist</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Theme Toggle, CV Button, CTA, Hamburger) -->
+      <div class="nav-actions">
+        <button id="themeToggle" class="theme-toggle" aria-label="Ubah Tema Tampilan" title="Beralih Mode Tampilan">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+        </button>
+
+        <button class="btn btn-outline btn-sm open-cv-modal-btn" aria-label="Buka Curriculum Vitae">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Download CV</span>
+        </button>
+
+        <a href="#contact" class="btn btn-primary btn-sm">
+          <span>Let's Connect</span>
+        </a>
+
+        <button id="hamburgerBtn" class="hamburger-btn" aria-label="Menu Navigasi Mobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section id="home" class="hero-section">
+      <div class="container hero-grid">
+        <!-- Left Content -->
+        <div class="hero-content fade-in-up visible">
+          <div class="hero-status-pill">
+            <span class="pulse-dot"></span>
+            <span>Available for Internship & Opportunities</span>
+          </div>
+
+          <div class="hero-titles">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">
+              <span class="gradient-text">Leo Adi Saputra</span>
+            </h1>
+            <div class="hero-role-wrapper">
+              <span class="hero-role-prefix">Informatics Student |</span>
+              <span id="heroRoleTyping" class="hero-role-typing">Aspiring Data Scientist</span>
+            </div>
+          </div>
+
+          <p class="hero-description">
+            Saya tertarik mengolah data menjadi insight yang bermakna melalui analisis data, machine learning, dan visualisasi untuk membantu menghasilkan keputusan yang lebih baik.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="#projects" class="btn btn-primary">
+              <span>Explore My Projects</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+
+          <!-- Quick Metrics Ribbon -->
+          <div class="hero-metrics">
+            <div class="metric-item">
+              <span class="metric-number">4<span>+</span></span>
+              <span class="metric-label">Domain Keahlian Utama</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">UAD</span>
+              <span class="metric-label">Universitas Ahmad Dahlan</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-number">100<span>%</span></span>
+              <span class="metric-label">Semangat Riset & Belajar</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase Card -->
+        <div class="hero-visual fade-in-up visible">
+          <div class="hero-card">
+            <!-- Floating Data Badges -->
+            <div class="floating-badge floating-badge-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+              <span>Naive Bayes & ML</span>
+            </div>
+
+            <div class="floating-badge floating-badge-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              <span>Tableau & EDA</span>
+            </div>
+
+            <div class="hero-avatar-wrapper">
+              <img src="assets/images/avatar.jpg" alt="Leo Adi Saputra" class="hero-avatar-img">
+            </div>
+
+            <div class="hero-card-meta">
+              <div class="hero-card-header">
+                <span class="hero-card-title">Leo Adi Saputra</span>
+                <span class="hero-card-inst">S1 Informatika</span>
+              </div>
+              <div class="hero-card-tags">
+                <span class="hero-card-tag">#DataScience</span>
+                <span class="hero-card-tag">#MachineLearning</span>
+                <span class="hero-card-tag">#DataViz</span>
+                <span class="hero-card-tag">#Python</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME SECTION
+         ========================================================================== -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-badge">// 01. ABOUT ME</span>
+          <h2 class="section-title">Dedikasi Mengubah Data Menjadi Wawasan</h2>
+          <p class="section-subtitle">
+            Mengenal lebih dekat latar belakang akademik, pendekatan analitis, dan aspirasi karier saya di bidang teknologi.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Profile Quick Info Card -->
+          <div class="about-card-profile fade-in-up">
+            <div class="profile-avatar-box">
+              <img src="assets/images/avatar.jpg" alt="Leo Adi Saputra - Foto Profil">
+            </div>
+
+            <div class="profile-info-center">
+              <h3>Leo Adi Saputra</h3>
+              <p>Informatics Student | Aspiring Data Scientist</p>
+            </div>
+
+            <div class="profile-meta-list">
+              <div class="profile-meta-row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                <span>Universitas Ahmad Dahlan</span>
+              </div>
+              <div class="profile-meta-row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"></path><path d="M6 6h10"></path><path d="M6 10h10"></path></svg>
+                <span>Program Studi Informatika</span>
+              </div>
+              <div class="profile-meta-row">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span>Yogyakarta, Indonesia</span>
+              </div>
+            </div>
+
+            <div class="profile-socials">
+              <a href="https://github.com/LeoUad" target="_blank" rel="noopener noreferrer" class="btn-icon" title="GitHub Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/leo-adi-saputra-5247bb3a6/" target="_blank" rel="noopener noreferrer" class="btn-icon" title="LinkedIn Profile">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="mailto:adisaputraleo336@gmail.com" class="btn-icon" title="Kirim Email">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Narrative Story & Pillars -->
+          <div class="about-narrative fade-in-up">
+            <p class="story-lead">
+              Halo! Saya <strong style="color: var(--accent-primary);">Leo Adi Saputra</strong>, mahasiswa Program Studi Informatika di Universitas Ahmad Dahlan. Saya memiliki minat mendalam dalam pengolahan data, pemrograman, kecerdasan buatan, dan pengembangan teknologi informasi modern.
+            </p>
+
+            <p class="story-body">
+              Dalam era ledakan data saat ini, data yang tidak diolah hanyalah sekadar tumpukan angka mentah. Melalui pemahaman matematika komputasi, algoritma machine learning, dan teknik visualisasi data yang komunikatif, saya berfokus untuk menemukan pola tersembunyi yang mampu memberikan jawaban atas masalah nyata.
+            </p>
+
+            <p class="story-body">
+              Pendekatan saya dalam menyelesaikan masalah didasarkan pada ketelitian eksplorasi data (EDA), pemahaman bisnis yang jelas, eksperimen model yang terukur, serta penulisan kode yang bersih dan terstruktur.
+            </p>
+
+            <!-- 3 Core Pillars -->
+            <div class="philosophy-grid">
+              <div class="philosophy-card">
+                <div class="philosophy-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                </div>
+                <h4>Data-Driven Mindset</h4>
+                <p>Mengedepankan data empiris dan penalaran analitis sebagai pijakan perumusan keputusan dan solusi teknologi.</p>
+              </div>
+
+              <div class="philosophy-card">
+                <div class="philosophy-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                </div>
+                <h4>Continuous Learning</h4>
+                <p>Terus memperdalam pemahaman model machine learning, optimasi algoritma, serta ekosistem komputasi modern.</p>
+              </div>
+
+              <div class="philosophy-card">
+                <div class="philosophy-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                </div>
+                <h4>Engineering Excellence</h4>
+                <p>Membangun kode sistem yang rapi, modular, dan dapat diintegrasikan dengan aplikasi web secara responsif.</p>
+              </div>
+            </div>
+
+            <!-- Education Box -->
+            <div class="education-box">
+              <div class="education-box-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+              </div>
+              <div class="education-box-content">
+                <h4>Sarjana (S1) Informatika</h4>
+                <p class="inst">Universitas Ahmad Dahlan — Yogyakarta</p>
+                <p>Fokus studi meliputi Algoritma & Pemrograman, Struktur Data, Sistem Basis Data, Statistika, Machine Learning, dan Rekayasa Perangkat Lunak.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS & TECHNOLOGIES SECTION
+         ========================================================================== -->
+    <section id="skills" class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-badge">// 02. SKILLS & TECHNOLOGIES</span>
+          <h2 class="section-title">Keahlian Teknis & Ekosistem Data</h2>
+          <p class="section-subtitle">
+            Kategori keahlian terstruktur yang benar-benar dipelajari dan diterapkan dalam analisis, pemodelan cerdas, serta pengembangan sistem tanpa persentase arbitrer.
+          </p>
+        </div>
+
+        <!-- Populated via JS renderSkills() -->
+        <div id="skillsGrid" class="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED PROJECTS SECTION
+         ========================================================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-badge">// 03. FEATURED PROJECTS</span>
+          <h2 class="section-title">Proyek Pilihan & Studi Kasus</h2>
+          <p class="section-subtitle">
+            Kumpulan proyek akademik, analisis data, machine learning, dan implementasi aplikasi berbasis komputasi nyata.
+          </p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="projects-filter-bar fade-in-up">
+          <button class="filter-btn active" data-filter="All">
+            <span>All Projects</span>
+            <span class="filter-count">4</span>
+          </button>
+          <button class="filter-btn" data-filter="Data Science">
+            <span>Data Science</span>
+          </button>
+          <button class="filter-btn" data-filter="Machine Learning">
+            <span>Machine Learning</span>
+          </button>
+          <button class="filter-btn" data-filter="Data Visualization">
+            <span>Data Visualization</span>
+          </button>
+          <button class="filter-btn" data-filter="Web Development">
+            <span>Web Development</span>
+          </button>
+          <button class="filter-btn" data-filter="Programming">
+            <span>Programming</span>
+          </button>
+        </div>
+
+        <!-- Populated via JS renderProjects() -->
+        <div id="projectsGrid" class="projects-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EXPERIENCE & EDUCATION TIMELINE SECTION
+         ========================================================================== -->
+    <section id="experience" class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-badge">// 04. EXPERIENCE & EDUCATION</span>
+          <h2 class="section-title">Perjalanan Akademik & Pengalaman</h2>
+          <p class="section-subtitle">
+            Rekam jejak studi di Universitas Ahmad Dahlan, proyek praktikum terarah, serta keaktifan kepengurusan organisasi kemahasiswaan.
+          </p>
+        </div>
+
+        <!-- Populated via JS renderTimeline() -->
+        <div id="timelineContainer" class="timeline-container"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ACHIEVEMENTS & CERTIFICATIONS SECTION
+         ========================================================================== -->
+    <section id="achievements" class="section">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-badge">// 05. ACHIEVEMENTS & CERTIFICATIONS</span>
+          <h2 class="section-title">Sertifikasi & Pencapaian</h2>
+          <p class="section-subtitle">
+            Dokumentasi sertifikasi kompetensi, pencapaian program wirausaha nasional, kemahiran bahasa Inggris, dan kepemimpinan seminar. Klik pada sertifikat untuk melihat berkas resmi resolusi penuh.
+          </p>
+        </div>
+
+        <!-- Populated via JS renderAchievements() -->
+        <div id="achievementsGrid" class="achievements-grid"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT SECTION
+         ========================================================================== -->
+    <section id="contact" class="section" style="background: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-header fade-in-up">
+          <span class="section-badge">// 06. GET IN TOUCH</span>
+          <h2 class="section-title">Let's Build Something Meaningful.</h2>
+          <p class="section-subtitle">
+            Tertarik mendiskusikan peluang magang, proyek data science bersama, atau sekadar berbagi ide seputar teknologi? Kirimkan pesan melalui formulir di bawah ini.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Panel -->
+          <div class="contact-info-panel fade-in-up">
+            <div>
+              <h3>Mari Terhubung</h3>
+              <p>
+                Saya selalu terbuka untuk berdiskusi mengenai proyek analitik data, kesempatan magang (internship), atau inisiatif pengembangan software inovatif.
+              </p>
+            </div>
+
+            <div class="contact-cards-list">
+              <a href="mailto:adisaputraleo336@gmail.com" class="contact-info-card">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">Email Profesional</span>
+                  <span class="contact-card-val">adisaputraleo336@gmail.com</span>
+                </div>
+              </a>
+
+              <a href="https://www.linkedin.com/in/leo-adi-saputra-5247bb3a6/" target="_blank" rel="noopener noreferrer" class="contact-info-card">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">LinkedIn</span>
+                  <span class="contact-card-val">linkedin.com/in/leo-adi-saputra-5247bb3a6</span>
+                </div>
+              </a>
+
+              <a href="https://github.com/LeoUad" target="_blank" rel="noopener noreferrer" class="contact-info-card">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">GitHub</span>
+                  <span class="contact-card-val">github.com/LeoUad</span>
+                </div>
+              </a>
+
+              <div class="contact-info-card">
+                <div class="contact-card-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                </div>
+                <div class="contact-card-text">
+                  <span class="contact-card-label">Lokasi Domisili</span>
+                  <span class="contact-card-val">Yogyakarta, D.I. Yogyakarta, Indonesia</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Form -->
+          <div class="contact-form-wrapper fade-in-up">
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contactName" class="form-label">Nama Lengkap *</label>
+                <input type="text" id="contactName" class="form-control" placeholder="Contoh: Budi Pratama" required>
+                <span id="nameError" class="form-error-msg">Nama lengkap minimal 2 karakter.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Alamat Email *</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="nama@email.com" required>
+                <span id="emailError" class="form-error-msg">Format email belum valid.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactSubject" class="form-label">Subjek Pesan *</label>
+                <input type="text" id="contactSubject" class="form-control" placeholder="Peluang Magang / Kolaborasi Proyek" required>
+                <span id="subjectError" class="form-error-msg">Subjek pesan minimal 3 karakter.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Isi Pesan *</label>
+                <textarea id="contactMessage" class="form-control" placeholder="Tuliskan detail pesan, kebutuhan proyek, atau tawaran Anda di sini..." required></textarea>
+                <span id="messageError" class="form-error-msg">Isi pesan minimal 10 karakter.</span>
+              </div>
+
+              <div class="form-submit-row">
+                <button type="submit" id="contactSubmitBtn" class="btn btn-primary">
+                  <span>Send Message</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+                </button>
+                <span class="form-disclaimer">Validasi aktif & terlindungi</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div class="logo-badge">LAS</div>
+            <span class="footer-brand-title">Leo Adi Saputra</span>
+          </div>
+          <span class="footer-brand-subtitle">Mahasiswa Informatika — Universitas Ahmad Dahlan</span>
+          <p class="footer-brand-desc">
+            Mengintegrasikan analisis data, algoritma machine learning, dan perancangan perangkat lunak untuk menghasilkan wawasan bernilai tinggi.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Navigasi</h4>
+          <ul class="footer-nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social-col">
+          <h4>Terhubung</h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">
+            Ikuti perjalanan riset komputasi dan perkembangan proyek saya di media profesional berikut:
+          </p>
+          <div class="footer-social-grid">
+            <a href="https://github.com/LeoUad" target="_blank" rel="noopener noreferrer" class="btn-icon" title="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/leo-adi-saputra-5247bb3a6/" target="_blank" rel="noopener noreferrer" class="btn-icon" title="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+            <a href="mailto:adisaputraleo336@gmail.com" class="btn-icon" title="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear">2026</span> Leo Adi Saputra. All rights reserved.</p>
+        <p class="footer-tagline">“Designed with curiosity, built with purpose.”</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL: PROJECT DETAIL (CASE STUDY)
+       ========================================================================== -->
+  <div id="projectModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <span id="projectModalTitle" style="font-weight: 700; font-size: 1.05rem;">Project Case Study</span>
+        <button id="closeProjectModal" class="modal-close-btn" aria-label="Tutup Dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div id="projectModalBody" class="modal-body">
+        <!-- Injected dynamically via openProjectModal(id) -->
+      </div>
+      <div id="projectModalFooter" class="modal-footer">
+        <!-- Injected dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: CV PREVIEW & DOWNLOAD
+       ========================================================================== -->
+  <div id="cvModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cvModalTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <span id="cvModalTitle" style="font-weight: 700; font-size: 1.05rem;">Curriculum Vitae Preview</span>
+        <button id="closeCVModal" class="modal-close-btn" aria-label="Tutup Dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="cv-preview-paper">
+          <div class="cv-preview-header">
+            <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 0.25rem;">LEO ADI SAPUTRA</h2>
+            <p style="color: var(--accent-primary); font-weight: 600;">Informatics Student | Aspiring Data Scientist</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Universitas Ahmad Dahlan &bull; Yogyakarta, Indonesia &bull; adisaputraleo336@gmail.com</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.4rem; text-transform: uppercase; font-family: var(--font-mono); letter-spacing: 0.05em;">Ringkasan Profesional</h4>
+            <p style="line-height: 1.6;">Mahasiswa Informatika dengan minat kuat dalam Data Science, Machine Learning, dan visualisasi data interaktif. Terbiasa mengolah dataset, melakukan preprocessing, serta membangun model klasifikasi dan antarmuka web sistem.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.4rem; text-transform: uppercase; font-family: var(--font-mono); letter-spacing: 0.05em;">Pendidikan</h4>
+            <p><strong style="color: var(--text-primary);">S1 Informatika — Universitas Ahmad Dahlan</strong> (2023 — Sekarang)</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Mata Kuliah Utama: Algoritma & Pemrograman, Struktur Data, Basis Data, Statistika, Machine Learning.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.4rem; text-transform: uppercase; font-family: var(--font-mono); letter-spacing: 0.05em;">Pengalaman Organisasi</h4>
+            <p><strong style="color: var(--text-primary);">Divisi Kominfo — LSO Futsal Universitas Ahmad Dahlan</strong> (2023 — Sekarang)</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Bertanggung jawab dalam pengelolaan publikasi media sosial resmi, diseminasi informasi turnamen/kegiatan, dan dokumentasi visual organisasi.</p>
+          </div>
+
+          <div>
+            <h4 style="color: var(--text-primary); font-size: 1rem; margin-bottom: 0.4rem; text-transform: uppercase; font-family: var(--font-mono); letter-spacing: 0.05em;">Keahlian Teknis Kunci</h4>
+            <p style="line-height: 1.6;">Python, C++, SQL, Machine Learning (Naive Bayes), Tableau, Matplotlib, Data Cleaning & Preprocessing, HTML, CSS, JavaScript, Git & GitHub.</p>
+          </div>
+
+          <div style="background: rgba(56, 189, 248, 0.08); border: 1px dashed var(--accent-primary); padding: 1rem; border-radius: var(--radius-md);">
+            <p style="font-size: 0.82rem; color: var(--accent-primary);">
+              <strong>Petunjuk Pemilik Website:</strong> Anda dapat meletakkan file berkas PDF resume resmi Anda di <code>assets/cv.pdf</code> untuk mengaktifkan unduhan berkas PDF langsung.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" onclick="closeCVModal()">Tutup</button>
+        <button id="downloadCVBtn" class="btn btn-primary btn-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+          <span>Download PDF</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: CERTIFICATE PREVIEW (LIGHTBOX)
+       ========================================================================== -->
+  <div id="certModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+    <div class="modal-dialog" style="max-width: 900px;">
+      <div class="modal-header">
+        <span id="certModalTitle" style="font-weight: 700; font-size: 1.05rem;">Pratinjau Sertifikat</span>
+        <button id="closeCertModal" class="modal-close-btn" aria-label="Tutup Dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+      </div>
+      <div id="certModalBody" class="modal-body" style="padding: 1.5rem;">
+        <div style="background: rgba(0,0,0,0.3); border-radius: var(--radius-md); padding: 0.5rem; display: flex; justify-content: center; align-items: center; min-height: 250px;">
+          <img id="certModalImg" src="" alt="Sertifikat" style="width: 100%; max-height: 70vh; object-fit: contain; border-radius: var(--radius-sm); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        </div>
+        <div style="margin-top: 1.25rem;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+            <h4 id="certModalHeading" style="font-size: 1.2rem; color: var(--text-primary); font-weight: 700;"></h4>
+            <span id="certModalDate" class="achievement-date"></span>
+          </div>
+          <p id="certModalIssuer" style="font-size: 0.92rem; color: var(--accent-primary); font-weight: 600; margin-bottom: 0.75rem;"></p>
+          <p id="certModalDesc" style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;"></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary btn-sm" onclick="closeCertModal()">Tutup</button>
+        <a id="certModalFullLink" href="" target="_blank" class="btn btn-primary btn-sm">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          <span>Buka Resolusi Penuh</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Notification Toasts Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Scripts: Modular Data & Logic -->
+  <script src="data/portfolio-data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
