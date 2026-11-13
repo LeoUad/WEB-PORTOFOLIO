@@ -19,7 +19,14 @@ const PORTFOLIO_DATA = {
     linkedin: "https://www.linkedin.com/in/leo-adi-saputra-5247bb3a6/",
     github: "https://github.com/LeoUad",
     academicDriveUrl: "https://drive.google.com/drive/folders/1qRokZqKBBhHEDOnlb54EOS09kHXg8hiV?usp=sharing", // Tautan resmi Google Drive tugas kuliah
-    cvPath: "assets/cv.pdf" // Letakkan file CV Anda di assets/cv.pdf
+    cvPath: "assets/cv.pdf", // Letakkan file CV Anda di assets/cv.pdf
+    educationHistory: [
+      { level: "S1-Informatika", institution: "Universitas Ahmad Dahlan", period: "2021 — Sekarang (Semester 7)" },
+      { level: "SMA", institution: "SMA N 1 Kedungreja", period: "2018 — 2021" },
+      { level: "SMP", institution: "SMP N 1 Patimuan", period: "2015 — 2018" },
+      { level: "SD", institution: "SD Bulupayung 03", period: "2009 — 2015" },
+      { level: "TK", institution: "PAUD Manunggal", period: "Pendidikan Anak Usia Dini" }
+    ]
   },
 
   skills: [
