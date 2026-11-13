@@ -4,26 +4,33 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
-  initCanvasNetwork();
-  initNavbar();
-  initTypewriter();
-  renderSkills();
-  renderProjects();
-  initProjectFilter();
-  renderTimeline();
-  renderAchievements();
-  initProjectModal();
-  initCVModal();
-  initCertModal();
-<<<<<<< HEAD
-  initAcademicDrive();
-=======
->>>>>>> d379ddd4c4c63aff69649ed6ca7015c0ddbac53c
-  initContactForm();
-  initScrollAnimations();
-  initBackToTop();
-  updateCopyrightYear();
+  const initTasks = [
+    initTheme,
+    initCanvasNetwork,
+    initNavbar,
+    initTypewriter,
+    renderSkills,
+    renderProjects,
+    initProjectFilter,
+    renderTimeline,
+    renderAchievements,
+    initProjectModal,
+    initCVModal,
+    initCertModal,
+    initAcademicDrive,
+    initContactForm,
+    initScrollAnimations,
+    initBackToTop,
+    updateCopyrightYear
+  ];
+
+  initTasks.forEach(task => {
+    try {
+      task();
+    } catch (err) {
+      console.warn(`[LeoPortfolio] Error in ${task.name}:`, err);
+    }
+  });
 });
 
 /* ==========================================================================
@@ -538,7 +545,6 @@ window.closeCertModal = closeCertModal;
 window.openCertModal = openCertModal;
 
 /* ==========================================================================
-<<<<<<< HEAD
    ACADEMIC DRIVE & ASSIGNMENTS REPOSITORY
    ========================================================================== */
 function initAcademicDrive() {
@@ -585,8 +591,6 @@ function initAcademicDrive() {
 }
 
 /* ==========================================================================
-=======
->>>>>>> d379ddd4c4c63aff69649ed6ca7015c0ddbac53c
    9. PROJECT DETAIL MODAL (CASE STUDY DEEP-DIVE)
    ========================================================================== */
 function initProjectModal() {
@@ -900,6 +904,11 @@ function initScrollAnimations() {
   const animatedElements = document.querySelectorAll('.fade-in-up:not(.visible)');
   if (!animatedElements.length) return;
 
+  if (!('IntersectionObserver' in window)) {
+    animatedElements.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -907,9 +916,16 @@ function initScrollAnimations() {
         obs.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08 });
 
-  animatedElements.forEach(el => observer.observe(el));
+  animatedElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
+  });
 }
 
 /* ==========================================================================

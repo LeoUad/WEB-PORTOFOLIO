@@ -1592,7 +1592,6 @@ button {
 }
 
 /* ==========================================================================
-<<<<<<< HEAD
    ACADEMIC DRIVE & ASSIGNMENTS REPOSITORY SECTION
    ========================================================================== */
 .academic-drive-section {
@@ -1710,8 +1709,17 @@ button {
 }
 
 @keyframes pulseDot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50% { transform: scale(1.35); opacity: 0.55; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.35);
+    opacity: 0.55;
+  }
 }
 
 .academic-drive-desc {
@@ -1792,9 +1800,11 @@ button {
   .academic-drive-card {
     padding: 1.75rem 1.25rem;
   }
+
   .academic-drive-title {
     font-size: 1.2rem;
   }
+
   .academic-drive-url-box {
     flex-direction: column;
     align-items: stretch;
@@ -1803,8 +1813,6 @@ button {
 }
 
 /* ==========================================================================
-=======
->>>>>>> d379ddd4c4c63aff69649ed6ca7015c0ddbac53c
    CONTACT SECTION
    ========================================================================== */
 .contact-grid {
