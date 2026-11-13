@@ -742,24 +742,13 @@ function initCVModal() {
   });
 
   downloadCVBtn?.addEventListener('click', () => {
-    // Check if real PDF exists or offer placeholder guidance
-    fetch('assets/cv.pdf', { method: 'HEAD' })
-      .then(res => {
-        if (res.ok) {
-          const a = document.createElement('a');
-          a.href = 'assets/cv.pdf';
-          a.download = 'CV_Leo_Adi_Saputra.pdf';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          showToast('Mengunduh Curriculum Vitae...', 'success');
-        } else {
-          showToast('File CV fisik dapat Anda letakkan di folder assets/cv.pdf. Preview CV telah ditampilkan.', 'info');
-        }
-      })
-      .catch(() => {
-        showToast('File CV dapat ditaruh di folder assets/cv.pdf.', 'info');
-      });
+    const a = document.createElement('a');
+    a.href = 'assets/cv.pdf';
+    a.download = 'CV_Leo_Adi_Saputra.pdf';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    showToast('Mengunduh Curriculum Vitae (PDF)...', 'success');
   });
 }
 

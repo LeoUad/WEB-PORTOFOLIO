@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Curriculum Vitae - Leo Adi Saputra</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      font-size: 9.5pt;
+      line-height: 1.45;
+    }
+
+    .page {
+      position: relative;
+      width: 100%;
+    }
+
+    .page-break {
+      page-break-after: always;
+      break-after: page;
+      height: 0;
+      display: block;
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 2px solid #0284c7;
+      padding-bottom: 10px;
+      margin-bottom: 12px;
+    }
+
+    .name {
+      font-size: 22pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .title {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #0284c7;
+      margin-top: 2px;
+      margin-bottom: 6px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 8.5pt;
+      color: #475569;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .contact-item a {
+      color: #0284c7;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Section Styling */
+    .section {
+      margin-bottom: 11px;
+    }
+
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .section-title::after {
+      content: "";
+      display: block;
+      height: 2px;
+      background: #0284c7;
+      width: 28px;
+      margin-top: 2px;
+    }
+
+    p.summary {
+      text-align: justify;
+      text-justify: inter-word;
+      color: #334155;
+      font-size: 9pt;
+      line-height: 1.45;
+    }
+
+    /* Entry Item */
+    .entry {
+      margin-bottom: 8px;
+    }
+
+    .entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+
+    .entry-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .entry-subtitle {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #0284c7;
+    }
+
+    .entry-date {
+      font-size: 8.5pt;
+      font-weight: 600;
+      color: #64748b;
+      white-space: nowrap;
+    }
+
+    .entry-desc {
+      font-size: 8.8pt;
+      color: #334155;
+      text-align: justify;
+      text-justify: inter-word;
+      line-height: 1.4;
+    }
+
+    .bullets {
+      margin-top: 3px;
+      padding-left: 14px;
+      list-style-type: disc;
+    }
+
+    .bullets li {
+      font-size: 8.7pt;
+      color: #334155;
+      margin-bottom: 2px;
+      text-align: justify;
+      text-justify: inter-word;
+      line-height: 1.38;
+    }
+
+    .tech-pill {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 1px 6px;
+      border-radius: 3px;
+      font-size: 7.8pt;
+      font-weight: 600;
+      border: 1px solid #e2e8f0;
+      margin-right: 3px;
+      margin-top: 2px;
+    }
+
+    /* Skills Grid */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 14px;
+      font-size: 8.8pt;
+    }
+
+    .skill-category {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 5px 8px;
+    }
+
+    .skill-cat-title {
+      font-weight: 700;
+      color: #0284c7;
+      font-size: 8.5pt;
+      margin-bottom: 2px;
+    }
+
+    .skill-cat-items {
+      color: #334155;
+      font-size: 8.4pt;
+      line-height: 1.35;
+    }
+
+    /* Page 2 Header Continuity */
+    .page2-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-bottom: 12px;
+      font-size: 8.5pt;
+      color: #64748b;
+    }
+
+    .page2-header strong {
+      color: #0f172a;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== HALAMAN 1 ==================== -->
+  <div class="page">
+    <div class="header">
+      <h1 class="name">LEO ADI SAPUTRA</h1>
+      <div class="title">Informatics Student | Aspiring Data Scientist</div>
+      <div class="contact-info">
+        <span class="contact-item">📍 Yogyakarta, D.I. Yogyakarta, Indonesia</span>
+        <span class="contact-item">✉️ <a href="mailto:adisaputraleo336@gmail.com">adisaputraleo336@gmail.com</a></span>
+        <span class="contact-item">💼 <a href="https://www.linkedin.com/in/leo-adi-saputra-5247bb3a6/" target="_blank">linkedin.com/in/leo-adi-saputra-5247bb3a6</a></span>
+        <span class="contact-item">💻 <a href="https://github.com/LeoUad" target="_blank">github.com/LeoUad</a></span>
+        <span class="contact-item">🎓 Universitas Ahmad Dahlan</span>
+      </div>
+    </div>
+
+    <!-- Ringkasan Profesional -->
+    <div class="section">
+      <div class="section-title">Ringkasan Profesional</div>
+      <p class="summary">
+        Mahasiswa Program Studi Informatika semester 7 di Universitas Ahmad Dahlan dengan fokus keahlian pada Data Science, Machine Learning, dan Rekayasa Perangkat Lunak. Memiliki pemahaman komputasi analitis dalam eksplorasi data (EDA), pengembangan model klasifikasi prediktif, serta perancangan dashboard visual interaktif. Berpengalaman aktif dalam kehumasan dan publikasi informasi digital organisasi kemahasiswaan serta program kewirausahaan nasional. Siap berkontribusi profesional dalam program magang (internship) dan proyek rekayasa berbasis data.
+      </p>
+    </div>
+
+    <!-- Pendidikan -->
+    <div class="section">
+      <div class="section-title">Pendidikan</div>
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">S1 Informatika</span> &mdash;
+            <span class="entry-subtitle">Universitas Ahmad Dahlan</span>
+          </div>
+          <span class="entry-date">2021 &mdash; Sekarang (Semester 7)</span>
+        </div>
+        <div class="entry-desc">
+          Fokus Keilmuan: Data Science, Machine Learning, Basis Data, dan Rekayasa Perangkat Lunak.
+        </div>
+        <ul class="bullets">
+          <li><strong>Mata Kuliah Utama:</strong> Algoritma & Pemrograman, Struktur Data, Sistem Basis Data, Statistika & Probabilitas, Machine Learning, Pemrograman Web, Pemrograman Berorientasi Objek.</li>
+          <li><strong>Praktikum Terpadu:</strong> Menyelesaikan praktikum analisis data eksploratif, normalisasi basis data relasional SQL, serta implementasi model pembelajaran mesin di Laboratorium Informatika UAD.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Keahlian Teknis -->
+    <div class="section">
+      <div class="section-title">Keahlian Teknis &amp; Alat</div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <div class="skill-cat-title">Bahasa Pemrograman</div>
+          <div class="skill-cat-items">Python, C++, Java, SQL, JavaScript (ES6+), HTML5, CSS3</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title">Data Science &amp; Machine Learning</div>
+          <div class="skill-cat-items">Exploratory Data Analysis (EDA), Data Preprocessing, Scikit-Learn, Naive Bayes, TF-IDF, Model Evaluation</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title">Visualisasi Data &amp; BI</div>
+          <div class="skill-cat-items">Tableau Public, Matplotlib, Seaborn, Pandas, Streamlit, Data Storytelling</div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-title">Tools &amp; Lingkungan Kerja</div>
+          <div class="skill-cat-items">Git, GitHub, Visual Studio Code, Google Colab, Jupyter Notebook, Microsoft Office</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Proyek Unggulan (Halaman 1: Proyek 1 & 2) -->
+    <div class="section">
+      <div class="section-title">Portofolio Proyek Unggulan</div>
+
+      <!-- Proyek 1 -->
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Klasifikasi Penggunaan Sepatu Futsal Berdasarkan Posisi Pemain</span>
+            <div style="margin-top: 1px;">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Scikit-Learn</span>
+              <span class="tech-pill">Naive Bayes</span>
+              <span class="tech-pill">Pandas</span>
+              <span class="tech-pill">NumPy</span>
+              <span class="tech-pill">Matplotlib</span>
+            </div>
+          </div>
+          <span class="entry-date">Academic Machine Learning Project</span>
+        </div>
+        <ul class="bullets">
+          <li>Merancang dan mengimplementasikan model klasifikasi cerdas berbasis algoritma Naive Bayes untuk menentukan rekomendasi jenis sepatu futsal optimal berdasarkan posisi taktis di lapangan (Anchor, Flank, Pivot, Goalkeeper) dan karakteristik sol (IC/TF).</li>
+          <li>Melakukan pembersihan data, penanganan data kategorikal dengan teknik encoding, serta evaluasi performa model menggunakan Confusion Matrix, Precision, Recall, dan F1-Score.</li>
+          <li>Menyediakan panduan rekomendasi yang terstruktur bagi atlet dan komunitas futsal kampus untuk meminimalkan risiko cedera dan meningkatkan performa bermain.</li>
+        </ul>
+      </div>
+
+      <!-- Proyek 2 -->
+      <div class="entry" style="margin-top: 6px;">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Interactive Business Intelligence Dashboard di Tableau</span>
+            <div style="margin-top: 1px;">
+              <span class="tech-pill">Tableau Public</span>
+              <span class="tech-pill">Data Modeling</span>
+              <span class="tech-pill">KPI Analytics</span>
+              <span class="tech-pill">Data Visualization</span>
+            </div>
+          </div>
+          <span class="entry-date">Business Intelligence & Analytics</span>
+        </div>
+        <ul class="bullets">
+          <li>Membangun dashboard visual analitik multidimensi tingkat eksekutif untuk memantau performa penjualan, margin profit, tren transaksi berkala, dan pemetaan persebaran geografis secara real-time.</li>
+          <li>Mengimplementasikan calculated fields, parameter dinamis, dan interactive drill-down filter untuk memudahkan pemangku kepentingan dalam mengidentifikasi wilayah dengan performa tertinggi dan anomali data.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE BREAK UNTUK HALAMAN 2 -->
+  <div class="page-break"></div>
+
+  <!-- ==================== HALAMAN 2 ==================== -->
+  <div class="page">
+    <div class="page2-header">
+      <span><strong>Leo Adi Saputra</strong> &mdash; Curriculum Vitae</span>
+      <span>Halaman 2 dari 2</span>
+      <span>adisaputraleo336@gmail.com</span>
+    </div>
+
+    <!-- Proyek Unggulan (Lanjutan Halaman 2: Proyek 3 & 4) -->
+    <div class="section">
+      <div class="section-title">Portofolio Proyek Unggulan (Lanjutan)</div>
+
+      <!-- Proyek 3 -->
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Web E-Commerce Apotek Daring (PharmaCare)</span>
+            <div style="margin-top: 1px;">
+              <span class="tech-pill">HTML5</span>
+              <span class="tech-pill">CSS3</span>
+              <span class="tech-pill">JavaScript (ES6+)</span>
+              <span class="tech-pill">LocalStorage</span>
+              <span class="tech-pill">Responsive Design</span>
+            </div>
+          </div>
+          <span class="entry-date">Course Web Project</span>
+        </div>
+        <ul class="bullets">
+          <li>Merancang dan membangun antarmuka web e-commerce apotek ramah pengguna dengan pencarian obat instan, filter kategori produk, dan kalkulasi biaya pesanan secara otomatis.</li>
+          <li>Mengelola state keranjang belanja pengguna secara persisten menggunakan LocalStorage tanpa dependensi library eksternal yang memberatkan, menjamin akses cepat dan responsif di seluruh perangkat.</li>
+        </ul>
+      </div>
+
+      <!-- Proyek 4 -->
+      <div class="entry" style="margin-top: 6px;">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Sistem Pemrosesan Algoritma Data Penjualan (C++ &amp; Python)</span>
+            <div style="margin-top: 1px;">
+              <span class="tech-pill">C++</span>
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Data Structures</span>
+              <span class="tech-pill">Sorting &amp; Search</span>
+              <span class="tech-pill">Memory Profiling</span>
+            </div>
+          </div>
+          <span class="entry-date">Computational Project</span>
+        </div>
+        <ul class="bullets">
+          <li>Mengembangkan modul komputasi pengolahan data transaksi bervolume tinggi dengan memanfaatkan struktur data teroptimasi (Hash Tables, Dynamic Arrays) pada C++ untuk efisiensi memori dan latensi rendah.</li>
+          <li>Memadukan script Python untuk benchmarking performa dan otomasi visualisasi laporan perbandingan kecepatan eksekusi algoritma.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Pengalaman Organisasi & Kepemimpinan -->
+    <div class="section">
+      <div class="section-title">Pengalaman Organisasi &amp; Kepemimpinan</div>
+
+      <!-- Organisasi 1 -->
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Divisi Kominfo (Komunikasi &amp; Informasi)</span> &mdash;
+            <span class="entry-subtitle">LSO Futsal Universitas Ahmad Dahlan</span>
+          </div>
+          <span class="entry-date">2023 &mdash; Sekarang</span>
+        </div>
+        <ul class="bullets">
+          <li>Bertanggung jawab dalam pengelolaan akun media sosial resmi organisasi, strategi komunikasi digital, diseminasi informasi turnamen, dan publikasi agenda rutin komunitas futsal UAD.</li>
+          <li>Merancang konten visual media informasi, dokumentasi multimedia kejuaraan, serta memperkuat branding positif dan relasi kehumasan dengan organisasi mahasiswa intra/ekstra kampus.</li>
+          <li>Berkoordinasi aktif dengan jajaran pengurus harian dalam menyukseskan program kerja kepengurusan dan kompetisi futsal antarmahasiswa.</li>
+        </ul>
+      </div>
+
+      <!-- Kepanitiaan / Moderator -->
+      <div class="entry" style="margin-top: 6px;">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Moderator Seminar Nasional Mahasiswa Berdampak</span> &mdash;
+            <span class="entry-subtitle">Kemendiktisaintek RI &amp; LPPM UAD</span>
+          </div>
+          <span class="entry-date">Juni 2026</span>
+        </div>
+        <ul class="bullets">
+          <li>Bertindak sebagai Moderator resmi memandu jalannya seminar diseminasi hasil pelaksanaan Program Mahasiswa Berdampak Tahun Anggaran 2025 yang diselenggarakan oleh Direktorat Penelitian dan Pengabdian kepada Masyarakat Kemendiktisaintek bersama UAD.</li>
+        </ul>
+      </div>
+
+      <!-- Pengabdian Masyarakat -->
+      <div class="entry" style="margin-top: 6px;">
+        <div class="entry-header">
+          <div>
+            <span class="entry-title">Peserta Pengabdian: Dahlan Muda Mengabdi</span> &mdash;
+            <span class="entry-subtitle">Bimawa UAD &amp; MPM PP Muhammadiyah</span>
+          </div>
+          <span class="entry-date">September 2023</span>
+        </div>
+        <ul class="bullets">
+          <li>Berpartisipasi aktif dalam aksi pengabdian masyarakat di desa mitra untuk mendukung program pemberdayaan sosial dan pembangunan berkelanjutan kemahasiswaan.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sertifikasi & Pelatihan Terverifikasi -->
+    <div class="section">
+      <div class="section-title">Sertifikasi &amp; Pelatihan Terverifikasi</div>
+      <div class="entry">
+        <ul class="bullets">
+          <li><strong>Program Pembinaan Mahasiswa Wirausaha (P2MW) 2024 (Tahapan Bertumbuh)</strong> &mdash; Belmawa Ditjen Diktiristek Kemendikbudristek (November 2024). Peserta wirausaha jasa &amp; perdagangan terdanai nasional.</li>
+          <li><strong>Ahmad Dahlan English Proficiency Test (ADEPT)</strong> &mdash; Ahmad Dahlan Language Center (ADLC) UAD (Juli 2026). Skor Total: 510 (Structure &amp; Written: 92, Reading: 90) setara kemahiran profesional.</li>
+          <li><strong>Introduction to Financial Literacy for Developers</strong> &mdash; Dicoding Indonesia (Januari 2026). ID Kredensial: GRX5J64MKX0M. Sertifikasi pemahaman budgeting dan manajemen keuangan produk teknologi.</li>
+          <li><strong>Pelatihan Literasi Informasi &amp; Metodologi Riset Ilmiah</strong> &mdash; Perpustakaan UAD (Mei 2026). Optimasi dokumen akademik, otomatisasi sitasi ilmiah, dan uji kesamaan kata (similarity check).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Kemahiran Bahasa & Repositori Akademik -->
+    <div class="section">
+      <div class="section-title">Kemahiran Bahasa &amp; Repositori Tugas</div>
+      <div class="entry">
+        <ul class="bullets">
+          <li><strong>Bahasa Indonesia:</strong> Penutur Asli (Native), tata bahasa akademik dan komunikasi profesional.</li>
+          <li><strong>Bahasa Inggris:</strong> Professional Working Proficiency (Skor ADEPT: 510, kemampuan membaca literatur teknis dan penulisan laporan internasional).</li>
+          <li><strong>Repositori Tugas Akademik (Google Drive):</strong> Seluruh berkas praktikum, materi presentasi, dan tugas perkuliahan Bahasa Inggris Profesional Semester 7 terdokumentasi terpusat dan dapat diverifikasi via Google Drive resmi.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
