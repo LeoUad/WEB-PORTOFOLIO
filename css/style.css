@@ -660,6 +660,8 @@ button {
   color: var(--text-secondary);
   line-height: 1.7;
   max-width: 580px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .hero-ctas {
@@ -930,17 +932,26 @@ button {
   gap: 2rem;
 }
 
+.about-narrative p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .story-lead {
   font-size: 1.15rem;
   color: var(--text-primary);
   font-weight: 500;
   line-height: 1.7;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .story-body {
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.75;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .philosophy-grid {
@@ -985,6 +996,8 @@ button {
   font-size: 0.88rem;
   line-height: 1.55;
   color: var(--text-muted);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Education Highlight Card */
@@ -1027,6 +1040,8 @@ button {
 .education-box-content p {
   font-size: 0.88rem;
   color: var(--text-muted);
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* ==========================================================================
@@ -1279,6 +1294,8 @@ button {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .project-tech-tags {
@@ -1407,6 +1424,8 @@ button {
   color: var(--text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .timeline-highlights {
@@ -1579,6 +1598,8 @@ button {
   line-height: 1.6;
   margin-bottom: 1.25rem;
   flex-grow: 1;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .achievement-actions {
@@ -1727,6 +1748,8 @@ button {
   color: var(--text-secondary);
   line-height: 1.7;
   margin-bottom: 1.75rem;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .academic-drive-url-box {
@@ -1837,6 +1860,8 @@ button {
   font-size: 1rem;
   color: var(--text-secondary);
   line-height: 1.65;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .contact-cards-list {
@@ -2019,6 +2044,8 @@ textarea.form-control {
   color: var(--text-muted);
   max-width: 380px;
   line-height: 1.6;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .footer-links-col h4,
@@ -2215,6 +2242,13 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+}
+
+.modal-body p,
+#certModalDesc,
+.cv-preview-paper p {
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .cv-preview-header {
