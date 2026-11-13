@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
   initProjectModal();
   initCVModal();
   initCertModal();
+<<<<<<< HEAD
   initAcademicDrive();
+=======
+>>>>>>> d379ddd4c4c63aff69649ed6ca7015c0ddbac53c
   initContactForm();
   initScrollAnimations();
   initBackToTop();
@@ -535,6 +538,7 @@ window.closeCertModal = closeCertModal;
 window.openCertModal = openCertModal;
 
 /* ==========================================================================
+<<<<<<< HEAD
    ACADEMIC DRIVE & ASSIGNMENTS REPOSITORY
    ========================================================================== */
 function initAcademicDrive() {
@@ -581,6 +585,8 @@ function initAcademicDrive() {
 }
 
 /* ==========================================================================
+=======
+>>>>>>> d379ddd4c4c63aff69649ed6ca7015c0ddbac53c
    9. PROJECT DETAIL MODAL (CASE STUDY DEEP-DIVE)
    ========================================================================== */
 function initProjectModal() {

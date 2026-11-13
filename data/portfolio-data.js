@@ -18,7 +18,10 @@ const PORTFOLIO_DATA = {
     email: "adisaputraleo336@gmail.com",
     linkedin: "https://www.linkedin.com/in/leo-adi-saputra-5247bb3a6/",
     github: "https://github.com/LeoUad",
+<<<<<<< HEAD
     academicDriveUrl: "https://drive.google.com/drive/folders/1qRokZqKBBhHEDOnlb54EOS09kHXg8hiV?usp=sharing", // Tautan resmi Google Drive tugas kuliah
+=======
+>>>>>>> d379ddd4c4c63aff69649ed6ca7015c0ddbac53c
     cvPath: "assets/cv.pdf" // Letakkan file CV Anda di assets/cv.pdf
   },
 
